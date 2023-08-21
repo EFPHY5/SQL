@@ -1,0 +1,36 @@
+/** Create Your Own Store Datebase
+SillySweetStore
+Type of Thing: Sweets
+Items: Lollipops, Chocolate Bars, Sour Straws, Popcorn, Jelly Beans, Gummy Worms, Cookies, Cupcakes, Mini Pies, Donuts, Cinnamon Rolls, Twizlers, Brownies, Ice Cream, Monkey Bread, Macaroons.
+Data: Item, Aisle, Price, Popularity**/
+
+CREATE TABLE SillySweetsStore (Id INTEGER PRIMARY KEY, Sweet TEXT, Price INTEGER, Aisle INTEGER, Popularity INTEGER);
+
+INSERT INTO SillySweetsStore VALUES (1, "Lollipops", 0.99, 1, 2);
+INSERT INTO SillySweetsStore VALUES (2, "Chocolate Bars", 0.99, 2, 4);
+INSERT INTO SillySweetsStore VALUES (3, "Sour Straws", 2.00, 3, 5);
+INSERT INTO SillySweetsStore VALUES (4, "Popcorn", 4.99, 1, 2);
+INSERT INTO SillySweetsStore VALUES (5, "Jelly Beans", 0.99, 3, 1);
+INSERT INTO SillySweetsStore VALUES (6, "Gummy Worms", 4.00, 3, 5);
+INSERT INTO SillySweetsStore VALUES (7, "Cookies", 2.99, 4, 5);
+INSERT INTO SillySweetsStore VALUES (8, "Cupcakes", 2.99, 4, 3);
+INSERT INTO SillySweetsStore VALUES (9, "Mini Pies", 3.99, 4, 2);
+INSERT INTO SillySweetsStore VALUES (10, "Donuts", 0.99, 4, 3);
+INSERT INTO SillySweetsStore VALUES (11, "Cinnamon Rolls", 5.99, 4, 5);
+INSERT INTO SillySweetsStore VALUES (12, "Twizlers", 0.99, 3, 2);
+INSERT INTO SillySweetsStore VALUES (13, "Brownies", 1.99, 4, 4);
+INSERT INTO SillySweetsStore VALUES (14, "Ice Cream", 6.99, 2, 5);
+INSERT INTO SillySweetsStore VALUES (15, "Monkey Bread", 0.99, 4, 5);
+INSERT INTO SillySweetsStore VALUES (16, "Lollipops", 0.99, 1, 2);
+
+--Display the database.
+SELECT * FROM SillySweetsStore;
+
+--Display the database ordered by price.
+SELECT * FROM SillySweetsStore ORDER BY Price desc;
+
+-- What are the 5 most popular Sweets?
+SELECT Sweet, Popularity FROM SillySweetsStore WHERE Popularity >=4 ORDER BY Popularity asc LIMIT 5;
+
+--What is the average price of the Sweets sold?
+SELECT AVG(price) FROM SillySweetsStore
